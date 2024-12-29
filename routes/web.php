@@ -8,10 +8,20 @@ Route::get('/', function () {
 
 });
 
-Route::get('/post',function(){
-    return view('post');
+Route::prefix('post')->group(function () {
+    Route::get('admin', function () {
+        return view('post');
+    });
+
+    Route::get('user', function () {
+        return "<h1>i am user</h1>";
+    });
+
+    Route::get('teamlead', function () {
+        return "<h1>i am teamlead</h1>";
+    });
+
 });
 
-Route::get('/post/firstpost',function(){
-    return view('firstpost');
-});
+
+

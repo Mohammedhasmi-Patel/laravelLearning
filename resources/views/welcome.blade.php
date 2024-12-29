@@ -10,15 +10,17 @@ view otherwise not include the view.
 
 
 
-@php
-  $fruits = [];
-  
-@endphp
 
 
-@includeUnless(true,'pages.header',['fruits'=>$fruits])
+@extends('layout.masterLayout')
 
-<h1>Home</h1>
+@section('content')
 
-@include('pages.footer')
-@includeIf('pages.content')
+
+<h2>this is home page</h2>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, praesentium.</p>
+@endsection
+
+@section('title')
+  Home
+@endsection

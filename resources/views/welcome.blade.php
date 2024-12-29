@@ -1,26 +1,24 @@
-<h1>Learning Laravel</h1>
+{{--
+
+include when is take three parametres first one is boolean means if there is true value then it will include that 
+view otherwise not include the view.
+
+
+
+
+--}}
 
 
 
 @php
-  $names = ["Salman Khan","Shahid kapoor","Katrina Kaif"]
+  $fruits = [];
+  
 @endphp
 
-<ul>
-@foreach ($names as $name)
-  @if($loop->even)
-    <li style="color:red">{{$name}}</li>
-  @elseif($loop->odd)
-  <li style="color:green">{{$name}}</li>
 
+@includeUnless(true,'pages.header',['fruits'=>$fruits])
 
-  @else
-  <li>{{$name}}</li>
+<h1>Home</h1>
 
-  @endif
-
-@endforeach
-</ul>
-
-
-
+@include('pages.footer')
+@includeIf('pages.content')
